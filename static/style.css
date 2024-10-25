@@ -1,0 +1,70 @@
+body {
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+h1 {
+    color: #ff6363;
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.cake {
+    margin-top: 20px;
+    font-size: 5em;
+}
+
+.balloons {
+    font-size: 2em;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+form {
+    margin-top: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #ff6363;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff4d4d;
+}
+
