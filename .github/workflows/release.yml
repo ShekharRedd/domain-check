@@ -1,5 +1,5 @@
 name: Release
-run-name: Release to prod from ${{ inputs.source-environment }}${{ inputs.source-environment == 'dev' && ' ⚠️ (not deployed to stage)' || '' }}
+run-name: Release to prod from ${{ inputs.source-environment }}${{ inputs.source-environment == 'dev' && ' ⚠️ (skipped stage)' || '' }}
 
 on:
     workflow_dispatch:
@@ -34,9 +34,9 @@ jobs:
         needs: [echo-world, approvals]
 
         steps:
-            - name: Deploy to test env
+            - name: successfully approved
               run: |
-                echo "deplpoying to test env "
+                echo "successfully approved and proceeding to deplo to prod"
 
 
 
