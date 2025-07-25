@@ -27,6 +27,10 @@ jobs:
         needs: [echo-world]
         runs-on: ubuntu-latest
         environment: test
+        steps:
+            - name: successfully approved
+              run: |
+                echo "successfully approved and proceeding to deplo to prod"
 
 
     deploy:
