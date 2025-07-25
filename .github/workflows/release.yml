@@ -1,44 +1,3 @@
-# name: Release
-# run-name: Release to prod from ${{ inputs.source-environment }}${{ inputs.source-environment == 'dev' && ' ⚠️ (not deployed to stage)' || '' }}
-
-# on:
-#     workflow_dispatch:
-#         inputs:
-#             source-environment:
-#                 description: |
-#                     Select the environment tag to promote to production.
-#                     - `stage`: Default. Promote image previously deployed to stage.
-#                     - `dev`: ⚠️ Not deployed to stage. Use only in critical cases with senior approval.
-#                 required: true
-#                 type: choice
-#                 default: stage
-#                 options: [dev, stage]
-
-
-# jobs:
-
-#     echo-world:
-#         runs-on: ubuntu-latest
-#         steps:
-#             - name: 'hello'
-#               run: echo 'hello'
-
-#     approvals:
-#         needs: [echo-world]
-#         runs-on: ubuntu-latest
-#         environment: test
-
-#     deploy:
-#         runs-on: ubuntu-latest
-#         needs: [echo-world, approvals]
-
-#         steps:
-#             - name: Deploy to test env
-#               run: |
-#                 echo "deplpoying to test env "
-
-
-
 name: Release
 run-name: Release to prod from ${{ inputs.source-environment }}${{ inputs.source-environment == 'dev' && ' ⚠️ (not deployed to stage)' || '' }}
 
@@ -57,9 +16,55 @@ on:
 
 
 jobs:
+
     echo-world:
         runs-on: ubuntu-latest
         steps:
             - name: 'hello'
               run: echo 'hello'
+
+    approvals:
+        needs: [echo-world]
+        runs-on: ubuntu-latest
+        environment: test
+        steps:
+            - name: Deploy to Production
+              run: |
+                echo 'Successfully Approved Going to deploy'
+
+
+    deploy:
+        runs-on: ubuntu-latest
+        needs: [echo-world, approvals]
+
+        steps:
+            - name: Deploy to test env
+              run: |
+                echo "deplpoying to test env "
+
+
+
+# name: Release
+# run-name: Release to prod from ${{ inputs.source-environment }}${{ inputs.source-environment == 'dev' && ' ⚠️ (not deployed to stage)' || '' }}
+
+# on:
+#     workflow_dispatch:
+#         inputs:
+#             source-environment:
+#                 description: |
+#                     Select the environment tag to promote to production.
+#                     - `stage`: Default. Promote image previously deployed to stage.
+#                     - `dev`: ⚠️ Not deployed to stage. Use only in critical cases with senior approval.
+#                 required: true
+#                 type: choice
+#                 default: stage
+#                 options: [dev, stage]
+
+
+# jobs:
+#     echo-world:
+#         runs-on: ubuntu-latest
+#         steps:
+#             - name: 'hello'
+#               run: echo 'hello'
 
