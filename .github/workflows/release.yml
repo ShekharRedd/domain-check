@@ -6,9 +6,9 @@ on:
         inputs:
             source-environment:
                 description: |
-                    Select the environment tag to promote to production.
-                    - `stage`: Default. Promote image previously deployed to stage.
-                    - `dev`: ⚠️ Not deployed to stage. Use only in critical cases with senior approval.
+                    ⚠️ Critical Use Only:
+                    This workflow promotes the stage image by default.
+                    Choose dev image only if skipping staging is required in urgent cases.
                 required: true
                 type: choice
                 default: stage
