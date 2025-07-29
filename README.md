@@ -12,7 +12,7 @@ Perfect 👍 — here’s a polished version of your whole section, formatted so
 | **Stage**   | Deploy workflow dispatch           | Visit the [deploy workflow](deploy-workflow) and trigger with the desired options. |
 | **Prod**    | Release workflow dispatch (by tag) | Visit the [release workflow](release-workflow) and trigger with the relevant tag.  |
 
-### Deploying to Prod Without Stage
+### Progessing to prod without stage deployment
 
 If you need to deploy new changes to **Prod** without first deploying to **Stage**, select **Dev** as the `source_environment` in the Release workflow dispatch.
 
