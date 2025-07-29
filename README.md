@@ -12,12 +12,11 @@ Perfect 👍 — here’s a polished version of your whole section, formatted so
 | **Stage**   | Deploy workflow dispatch           | Visit the [deploy workflow](deploy-workflow) and trigger with the desired options. |
 | **Prod**    | Release workflow dispatch (by tag) | Visit the [release workflow](release-workflow) and trigger with the relevant tag.  |
 
-### Deploying to Prod Without Stage
+Deploying to Prod Without Stage
 
-If you need to deploy new changes to **Prod** without first deploying to **Stage**, select **Dev** as the `source_environment` in the Release workflow dispatch.
-
-> **Note:** Selecting this option will skip the Stage deployment, and your changes will be deployed directly from Dev to Prod.
-
----
+```md
+> ⚠️ **Warning**
+> Selecting this option will skip the Stage deployment, and your changes will be deployed directly from Dev to Prod.
+```
 
 ⚡ Do you want me to also add a **warning callout** (like “⚠️ Not recommended for normal releases”) to make it clear this should be used carefully?
