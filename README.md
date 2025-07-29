@@ -16,7 +16,7 @@ Perfect 👍 — here’s a polished version of your whole section, formatted so
 
 If you need to deploy new changes to **Prod** without first deploying to **Stage**, select **Dev** as the `source_environment` in the Release workflow dispatch.
 
->> **Note:** Selecting this option will skip the Stage deployment, and your changes will be deployed directly from Dev to Prod.
+> **Note:** Selecting this option will skip the Stage deployment, and your changes will be deployed directly from Dev to Prod.
 
 ---
 
